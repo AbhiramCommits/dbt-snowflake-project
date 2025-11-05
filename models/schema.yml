@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: session_summary
+    description: "Joined session data combining user session channel and timestamp information"
+    columns:
+      - name: '"user_id"'
+        description: "Unique identifier for the user"
+        tests:
+          - not_null
+      - name: '"session_id"'
+        description: "Unique identifier for each session"
+        tests:
+          - not_null
+          - unique
+      - name: '"channel"'
+        description: "Source channel of the session"
+      - name: '"created_at"'
+        description: "Timestamp when the session started"
